@@ -15,7 +15,7 @@ const FullPage = () => {
   const getData = async () => {
     console.log("Get data Running");
     const response = await axios.get(
-      "http://http://hashith.online:3000/api/read/" + state.key
+      "http://hashith.online:3000/api/read/" + state.key
     );
     console.log(details);
 

@@ -14,7 +14,7 @@ function MapComponent() {
   const getAllLocations = async () => {
     try {
       const response = await axios.get(
-        "http://http://hashith.online:3000/api/readall"
+        "http://hashith.online:3000/api/readall"
       );
       if (response.data != null) {
         const newLocations: Location[] = [];

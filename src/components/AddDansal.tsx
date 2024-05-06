@@ -98,23 +98,20 @@ function AddDansale() {
 
   // Sending data to backend
   const addDansalRecord = async () => {
-    const responce = await axios.post(
-      "http://http://hashith.online:3000/api/create",
-      {
-        name: name,
-        oranization: organizationName,
-        date: date.toString(),
-        location: city,
-        district: district,
-        province: "Western",
-        startingTime: time.toString(),
-        amOrpm: amOrPm,
-        isOpen: false,
-        numberOfPeopple: 0,
-        startLocationLan: locationLat,
-        startLocationLong: locationLong,
-      }
-    );
+    const responce = await axios.post("http://hashith.online:3000/api/create", {
+      name: name,
+      oranization: organizationName,
+      date: date.toString(),
+      location: city,
+      district: district,
+      province: "Western",
+      startingTime: time.toString(),
+      amOrpm: amOrPm,
+      isOpen: false,
+      numberOfPeopple: 0,
+      startLocationLan: locationLat,
+      startLocationLong: locationLong,
+    });
     if (responce.status == 200) {
       addDansal();
       navigate("/");

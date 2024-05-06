@@ -25,7 +25,6 @@ export const DansalCard: React.FC<ContactInfoProps> = ({
   startingTime,
   amOrpm,
   isOpen,
-  numberOfPeopple,
 }) => {
   return (
     <Card className="w-[330px]">

@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import UserLocationPage from "./components/UserLocationPage";
 import FullPage from "./components/FullPage";
 import AddDansale from "./components/AddDansal";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MapComponent from "./components/Map";
 

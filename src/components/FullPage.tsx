@@ -5,22 +5,20 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 
-interface ContactInfoProps {
-  location: string;
-}
 const FullPage = () => {
   const location = useLocation();
   const state = location.state;
   const [isContentLocaed, setIsContentLoaded] = useState(false);
   const [details, setDetails] = useState([]);
-  const [dataArray, setDataArray] = useState([]);
   const [contactProps, setContactProps] = useState([]);
 
   const getData = async () => {
     console.log("Get data Running");
     const response = await axios.get(
-      "http://localhost:4000/api/read/" + state.key
+      "http://http://hashith.online:3000/api/read/" + state.key
     );
+    console.log(details);
+
     console.log(response.data);
     setDetails(response.data);
     if (response.data != null) {

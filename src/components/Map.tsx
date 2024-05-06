@@ -1,6 +1,5 @@
 import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
 import axios from "axios";
-import { log } from "console";
 import { useState, useEffect } from "react";
 
 interface Location {
@@ -14,7 +13,9 @@ function MapComponent() {
 
   const getAllLocations = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/readall");
+      const response = await axios.get(
+        "http://http://hashith.online:3000/api/readall"
+      );
       if (response.data != null) {
         const newLocations: Location[] = [];
         response.data.forEach((element: any) => {

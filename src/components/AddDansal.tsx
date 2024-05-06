@@ -98,7 +98,7 @@ function AddDansale() {
 
   // Sending data to backend
   const addDansalRecord = async () => {
-    const responce = await axios.post("http://hashith.online:3000/api/create", {
+    const responce = await axios.post("http://hashith.online/api/create", {
       name: name,
       oranization: organizationName,
       date: date.toString(),

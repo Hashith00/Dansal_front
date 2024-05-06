@@ -13,9 +13,7 @@ function MapComponent() {
 
   const getAllLocations = async () => {
     try {
-      const response = await axios.get(
-        "http://hashith.online:3000/api/readall"
-      );
+      const response = await axios.get("http://hashith.online/api/readall");
       if (response.data != null) {
         const newLocations: Location[] = [];
         response.data.forEach((element: any) => {

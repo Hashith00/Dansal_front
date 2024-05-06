@@ -13,7 +13,7 @@ function MapComponent() {
 
   const getAllLocations = async () => {
     try {
-      const response = await axios.get("http://hashith.online/api/readall");
+      const response = await axios.get("https://hashith.online/api/readall");
       if (response.data != null) {
         const newLocations: Location[] = [];
         response.data.forEach((element: any) => {
@@ -44,22 +44,23 @@ function MapComponent() {
           <p>Loading</p>
         </div>
       ) : (
-        <APIProvider apiKey="AIzaSyC8XOXvvxImxyxY6dFnOKIMTlbOM3X58Yw">
-          <Map
-            style={{ width: "100vw", height: "100vh" }}
-            defaultZoom={9}
-            gestureHandling={"cooperative"}
-            center={{ lat: 6.927079, lng: 79.861244 }}
-            disableDefaultUI={true}
-          >
-            {locations.map((location, index) => (
-              <Marker
-                key={index}
-                position={{ lat: location.lat, lng: location.lng }}
-              />
-            ))}
-          </Map>
-        </APIProvider>
+        <div>
+          <APIProvider apiKey="AIzaSyC8XOXvvxImxyxY6dFnOKIMTlbOM3X58Yw">
+            <Map
+              style={{ width: "100vw", height: "100vh" }}
+              defaultZoom={8}
+              center={{ lat: 6.927079, lng: 79.861244 }}
+              draggable={true}
+            >
+              {locations.map((location, index) => (
+                <Marker
+                  key={index}
+                  position={{ lat: location.lat, lng: location.lng }}
+                />
+              ))}
+            </Map>
+          </APIProvider>
+        </div>
       )}
     </>
   );

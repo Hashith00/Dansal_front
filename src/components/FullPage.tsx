@@ -15,7 +15,7 @@ const FullPage = () => {
   const getData = async () => {
     console.log("Get data Running");
     const response = await axios.get(
-      "http://hashith.online/api/read/" + state.key
+      "https://hashith.online/api/read/" + state.key
     );
     console.log(details);
 
@@ -59,7 +59,7 @@ const FullPage = () => {
       <p className="text-2xl font-light leading-none tracking-tight ml-10 mb-4">
         {state.key}
       </p>
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-4 m-10">
+      <div className="grid grid-cols-1 place-items-center gap-2 md:grid-cols-2 lg:grid-cols-4 md:m-10">
         {isContentLocaed == false ? (
           <SkeletonDemo />
         ) : (

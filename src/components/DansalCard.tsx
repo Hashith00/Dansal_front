@@ -34,7 +34,7 @@ export const DansalCard: React.FC<ContactInfoProps> = ({
       </CardHeader>
       <CardContent>
         <div>
-          <div className="grid w-full items-center gap-4">
+          <div className="grid w-full items-center gap-4 ">
             <div className="mb-3">
               <div className="bg-gray-200 p-4 text-center h-24 mb-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg"></div>
               <p className="text-lg font-semibold leading-none tracking-tight mb-1">

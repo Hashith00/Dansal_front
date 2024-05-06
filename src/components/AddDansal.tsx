@@ -58,16 +58,21 @@ function AddDansale() {
   // Location Adding event handling
   const handleLocationAdding = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(function (position) {
-        setLocationLat(position.coords.latitude);
-        setLocationLong(position.coords.longitude);
-        console.log(position.coords.longitude);
-        setIsLocationAdded(true); // Move inside the success callback
-      });
+      navigator.geolocation.watchPosition(
+        function (position) {
+          setLocationLat(position.coords.latitude);
+          setLocationLong(position.coords.longitude);
+          console.log(position.coords.longitude);
+          setIsLocationAdded(true);
+        },
+        function (error) {
+          console.error("Error Code = " + error.code + " - " + error.message);
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
     }
-    notify();
   };
-
   // Added tostify events
   const notify = () => {
     console.log("Clikced");
@@ -98,7 +103,7 @@ function AddDansale() {
 
   // Sending data to backend
   const addDansalRecord = async () => {
-    const responce = await axios.post("http://hashith.online/api/create", {
+    const responce = await axios.post("https://hashith.online/api/create", {
       name: name,
       oranization: organizationName,
       date: date.toString(),
